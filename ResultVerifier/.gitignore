@@ -1,0 +1,5 @@
+.bsp/
+target/
+project/project/
+project/target/
+project/build.properties

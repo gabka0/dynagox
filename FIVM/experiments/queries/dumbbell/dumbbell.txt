@@ -1,0 +1,14 @@
+6 7
+0 A long -1 {} 0
+1 B long 0 {0} 0
+2 C long 1 {1} 0
+3 D long 2 {2} 0
+4 E long 3 {3} 0
+5 G long 4 {4} 0
+R1 1 A,B
+R2 2 B,C
+R3 2 C,A
+R4 3 C,D
+R5 4 D,E
+R6 5 E,G
+R7 5 G,D

@@ -1,0 +1,12 @@
+project/project/
+project/target/
+storelib/target/
+target/
+ddbtoaster/core/target/
+ddbtoaster/dist/
+ddbtoaster/lms/target/
+ddbtoaster/pardis/target/
+ddbtoaster/release/
+ddbtoaster/spark/target/
+ddbtoaster/srccpp/old_driver/
+ddbtoaster/srccpp/old_lib/

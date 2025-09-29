@@ -1,0 +1,10 @@
+5 4
+0 customer_sk int -1 {} 0
+1 date_sk int 0 {0} 0
+2 cs_sales_price double 1 {0,1} 0
+3 address_sk int 0 {0} 0
+4 ca_zip string 3 {3} 0
+catalog_sales 2 date_sk, customer_sk, cs_sales_price
+customer 3 customer_sk, address_sk
+customer_address 4 address_sk, ca_zip
+date_dim 1 date_sk

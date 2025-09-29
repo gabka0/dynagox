@@ -1,0 +1,88 @@
+\usepackage{amssymb,amsmath,amsthm,hyperref,verbatim,pict2e,graphicx,array,listings,appendix,color}
+%\usepackage{algorithm,algorithmic,booktabs,marvosym,wrapfig,xytree,multicol,multirow,arydshln}
+\hypersetup{colorlinks,citecolor=black,linkcolor=black,filecolor=blue,urlcolor=blue}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% margins
+\pagestyle{headings}
+\oddsidemargin 0.0cm
+\evensidemargin 0.0cm
+\topmargin 0.0cm
+\headheight 0.0cm
+\headsep 1.0cm
+\textheight 21.0cm
+\textwidth 16.0cm
+\parskip 0.1cm
+\parindent 0.0cm
+\footskip 1.0cm
+% compact titles
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{8pt}{0pt}
+\titlespacing{\subsection}{0pt}{8pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{8pt}{0pt}
+% tables
+\def\tab[#1]{\begin{tabular}{@{\hspace{0cm}} #1 }}
+\def\tabe{\end{tabular}}
+% exponent
+\def\up#1{\textsuperscript{#1}}
+% compact lists
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\setenumerate{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+\renewcommand{\labelitemi}{\textbullet}
+\renewcommand{\labelitemii}{$\circ$}
+\renewcommand{\labelitemiii}{\tiny$\blacksquare$}
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\renewcommand{\labelenumii}{\alph{enumii}.}
+\renewcommand{\labelenumiii}{\roman{enumiii}.}
+\def\ul{\begin{itemize}}
+\def\ule{\end{itemize}}
+\def\ol{\begin{enumerate}}
+\def\ole{\end{enumerate}}
+% header
+\author{\href{mailto:thierry.coppey@epfl.ch}{\color{black} Thierry Coppey}}
+\makeatletter
+\def\ps@headings{\let\@mkboth\markboth
+\def\@evenhead{\footnotesize {\bf \@title}\hfill \textit{\@author}, p.~\thepage}
+\def\@oddhead{\@evenhead}}\pagestyle{headings}
+\makeatother
+
+% languages
+\definecolor{dkpink}{RGB}{200,0,100}
+\definecolor{gray}{RGB}{128,128,128}
+\lstset{
+  xleftmargin=20pt,numberstyle=\tiny,stepnumber=1,numbersep=5pt,
+  showstringspaces=true, % underline spaces within strings
+  tabsize=2,
+  captionpos=none, % caption-position : top,bottom,none
+  %escapechar=$,
+  breaklines=true, % automatic line breaking
+  breakatwhitespace=true, % sets if automatic breaks should only happen at whitespace
+  title=\lstname, % show the filename of files included with \lstinputlisting; also try caption instead of title
+  basicstyle=\small\tt,keywordstyle=\color{blue},commentstyle=\color{gray},stringstyle=\color{dkpink}
+}
+% Scala
+\lstdefinelanguage{Scala}{
+	morekeywords={abstract,case,catch,class,def,do,else,extends,false,final,finally,for,if,implicit,import,%
+	match,mixin,new,null,object,override,package,	private,protected,requires,return,sealed,super,this,%
+	throw,trait,true,try,type,val,var,while,with,yield},
+	otherkeywords={=>,<-,<\%,<:,>:,\#,@},sensitive=true,
+	morecomment=[l]{//},	morecomment=[n]{/*}{*/},
+	morestring=[b]",morestring=[b]',morestring=[b]"""
+}
+
+% -----------------------------------------------------------------------------------------------------------------
+% \tbox : multiline textbox for pictures; \tbox[0=no frame,l=left_align]{width}{height}{content}
+\makeatletter
+\def\instr#1#2{TT\fi\begingroup\edef\x{\endgroup\noexpand\in@{#1}{#2}}\x\ifin@} 
+\newlength{\tbox@len}
+\newcommand\tbox[4][]{\setlength{\tbox@len}{\unitlength}
+	\if\instr{0}{#1}\else \put(0,0){\framebox(#2,#3)[c]{}} \fi
+	\setlength{\unitlength}{.5\tbox@len}\put(0,#3){\setlength{\unitlength}{1pt}%
+		\put(1,-2){\setlength{\unitlength}{#2\tbox@len}\addtolength{\unitlength}{-2pt}%
+			\begin{minipage}{\unitlength}\if\instr{l}{#1} \else \centering \fi #4 \end{minipage}}}
+	\setlength{\unitlength}{\tbox@len}
+}
+\makeatother

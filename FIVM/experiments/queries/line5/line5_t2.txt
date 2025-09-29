@@ -1,0 +1,12 @@
+6 5
+0 C long -1 {} 0
+1 B long 0 {0} 0
+2 A double 1 {1} 0
+3 D long 0 {0} 0
+4 E long 3 {3} 0
+5 G double 4 {4} 0
+R1 2 A,B
+R2 1 B,C
+R3 3 C,D
+R4 4 D,E
+R5 5 E,G

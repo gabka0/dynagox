@@ -1,0 +1,9 @@
+CREATE STREAM R1(src long, dst long) FROM FILE 'R1.dat' LINE DELIMITED CSV;
+CREATE STREAM R2(src long, dst long) FROM FILE 'R2.dat' LINE DELIMITED CSV;
+CREATE STREAM R3(src long, dst long) FROM FILE 'R3.dat' LINE DELIMITED CSV;
+CREATE STREAM R4(src long, dst long) FROM FILE 'R4.dat' LINE DELIMITED CSV;
+CREATE STREAM R5(src long, dst long) FROM FILE 'R5.dat' LINE DELIMITED CSV;
+
+SELECT COUNT(*) FROM R1, R2, R3, R4, R5
+WHERE R1.dst = R2.src AND R2.dst = R3.src AND R3.dst = R4.src AND R4.dst = R5.src
+GROUP BY R3.src, R3.dst;

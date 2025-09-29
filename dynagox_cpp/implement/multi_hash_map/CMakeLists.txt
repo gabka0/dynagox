@@ -1,0 +1,2 @@
+add_library(multi_hash_map INTERFACE)
+target_include_directories(multi_hash_map INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/include)

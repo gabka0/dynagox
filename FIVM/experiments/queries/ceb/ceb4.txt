@@ -1,0 +1,16 @@
+8 7
+0 B long -1 {} 0
+1 A long 0 {0} 0
+2 I long 0 {0} 0
+3 C long 0 {0} 0
+4 D long 3 {3} 0
+5 E long 3 {3} 0
+6 G long 3 {3} 0
+7 H long 3 {3} 0
+AN 1 A,B
+CI 3 B,C
+MI 4 D,C
+MII1 5 E,C
+MII2 6 G,C
+MK 7 H,C
+PI 2 I,B

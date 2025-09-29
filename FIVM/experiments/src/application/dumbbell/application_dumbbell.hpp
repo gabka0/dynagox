@@ -1,0 +1,35 @@
+#ifndef APPLICATION_DUMBBELL
+#define APPLICATION_DUMBBELL
+
+#include "../application.hpp"
+#include <fstream>
+
+void Application::process_streams(dbtoaster::data_t &data, Stopwatch &timer, std::string input) {
+    std::ifstream in(input);
+    std::string line;
+
+    while (getline(in, line)) {
+        if (line.at(0) == '*') {
+            continue;
+        } else {
+            std::stringstream stream(line);
+            std::string field;
+
+            getline(stream, field, '|');
+            getline(stream, field, '|');
+            unsigned long src = std::stoul(field);
+            getline(stream, field, '|');
+            unsigned long dst = std::stoul(field);
+
+            data.on_insert_R1(src, dst);
+            data.on_insert_R2(src, dst);
+            data.on_insert_R3(src, dst);
+            data.on_insert_R4(src, dst);
+            data.on_insert_R5(src, dst);
+            data.on_insert_R6(src, dst);
+            data.on_insert_R7(src, dst);
+        }
+    }
+}
+
+#endif

@@ -1,0 +1,8 @@
+4 3
+0 B long -1 {} 0
+1 A long 0 {0} 0
+2 C long 0 {0} 0
+3 D long 2 {2} 0
+AN 1 A,B
+CI 2 B,C
+MC 3 D,C

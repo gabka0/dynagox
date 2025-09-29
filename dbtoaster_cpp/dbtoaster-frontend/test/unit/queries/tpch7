@@ -1,0 +1,106 @@
+{
+  :path => "test/queries/tpch/query7.sql",
+  :datasets => {
+    "standard" => {
+      :toplevels => {
+        "REVENUE" => {
+          :type => :onelevel,
+          :expected => { }
+        }
+      }
+    },
+    
+    "tiny" => {
+      :subs => [ [/schemas\.sql/, "schemas_tiny.sql"] ],
+      :toplevels => {
+        "REVENUE" => {
+          :type => :onelevel,
+          :expected => { }
+        }
+      }
+    },
+    
+    "big" => {
+      :subs => [ [/schemas\.sql/, "schemas_big.sql"] ],
+      :toplevels => {
+        "REVENUE" => {
+          :type => :onelevel,
+          :expected => {
+            ['GERMANY', 'FRANCE',  1996] => 5557312.1121,
+            ['FRANCE', 'GERMANY', 1996] => 5224779.5736,
+            ['GERMANY', 'FRANCE',  1995] => 6232818.7037,
+            ['FRANCE',  'GERMANY', 1995] => 4637235.1501          
+          }
+        }
+      }
+    },
+    
+    "standard_del" => {
+      :subs => [ [/schemas\.sql/, "schemas_del.sql"] ],
+      :toplevels => {
+        "REVENUE" => {
+          :type => :onelevel,
+          :expected => { }
+        }
+      }
+    },
+    
+    "tiny_del" => {
+      :subs => [ [/schemas\.sql/, "schemas_tiny_del.sql"] ],
+      :toplevels => {
+        "REVENUE" => {
+          :type => :onelevel,
+          :expected => { }
+        }
+      }
+    },
+    
+    "big_del" => {
+      :subs => [ [/schemas\.sql/, "schemas_big_del.sql"] ],
+      :toplevels => {
+        "REVENUE" => {
+          :type => :onelevel,
+          :expected => {
+            ['FRANCE',  'GERMANY', 1996] => 1373480.8998,
+            ['FRANCE',  'GERMANY', 1995] => 775813.5264,
+            ['GERMANY', 'FRANCE',  1995] => 1389978.0797,
+            ['GERMANY', 'FRANCE',  1996] => 1196977.7510          
+          }
+        }
+      }
+    },
+
+    "custom" => {
+      :subs => [ [/schemas\.sql/, "schemas_custom.sql"] ],
+      :toplevels => {
+        "REVENUE" => {
+          :type => :onelevel,
+          :expected => {
+            ['FRANCE',  'GERMANY', 1996] => 131032.6116,
+            ['FRANCE',  'GERMANY', 1995] => 9515.3568,
+            ['GERMANY', 'FRANCE',  1995] => 202647.6892,
+            ['GERMANY', 'FRANCE',  1996] => 102422.883          
+          }
+        }
+      }
+    },    
+    
+    "custom_huge" => {
+      :subs => [ [/schemas\.sql/, "schemas_custom_huge.sql"] ],
+      :toplevels => {
+        "REVENUE" => {
+          :type => :onelevel,
+          :expected => {
+            ['FRANCE',  'GERMANY', 1996] => 1549476.3698,
+            ['FRANCE',  'GERMANY', 1995] => 1132768.4538,
+            ['GERMANY', 'FRANCE',  1995] => 1078328.177,
+            ['GERMANY', 'FRANCE',  1996] => 1141231.08          
+          }
+        }
+      }
+    }
+
+  }
+}
+
+

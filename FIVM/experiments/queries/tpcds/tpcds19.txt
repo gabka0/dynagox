@@ -1,0 +1,17 @@
+10 6
+0 date_sk int -1 {} 0
+1 item_sk int 0 {0} 0
+2 customer_sk int 1 {0,1} 0
+3 store_sk int 2 {0,1,2} 0
+4 ss_ext_sales_price double 3 {0,1,2,3} 0
+5 address_sk int 2 {2} 0
+6 i_brand_id int 1 {1} 0
+7 i_brand string 6 {1,6} 0
+8 i_manufact_id int 7 {1,6,7} 0
+9 i_manufact string 8 {1,6,7,8} 0
+store_sales 4 date_sk, item_sk, customer_sk, store_sk, ss_ext_sales_price
+store 3 store_sk
+customer 5 customer_sk, address_sk
+customer_address 5 address_sk
+date_dim 0 date_sk
+item 9 item_sk, i_brand_id, i_brand, i_manufact_id, i_manufact

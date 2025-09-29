@@ -1,0 +1,8 @@
+4 3
+0 B long -1 {} 0
+1 A long 0 {0} 0
+2 C long 0 {0} 0
+3 D long 2 {2} 0
+PKP1 1 A,B
+PKP2 2 B,C
+PHIT 3 C,D
