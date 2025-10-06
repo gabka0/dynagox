@@ -1,8 +1,25 @@
 ## Repository for Paper: Approximate Query Processing under Updates
-This repository contains the code and resources for our paper: Approximate Query Processing under Updates. 
+This repository contains the code and resources for our paper: Approximate Query Processing under Updates.
 
 ### Queries
 The SQL queries used in the experiments can be found in [Queries](Queries.md).
+
+### Project Structure
+The repository is organized as follows:
+   ```
+    ├── data/                # Scripts for preparing input data
+    ├── dynagox_cpp/         # DynaGox(C++) implementation and related scripts
+    ├── dynagox_flink/       # DynaGox(Flink) implementation and related scripts
+    ├── crown_cpp/           # Crown(C++) implementation and related scripts
+    ├── dbtoaster_cpp/       # DBToaster (from https://github.com/dbtoaster) and related scripts
+    ├── FIVM/                # F-IVM (from https://github.com/fdbresearch/FIVM) and related scripts
+    ├── feldera/             # feldera (from https://www.feldera.com) and related scripts
+    ├── duckdb/              # DuckDB and related scripts
+    ├── ResultVerifier/      # Utilities for verifying the correctness of experiment results
+    ├── Queries.md           # List of queries used in the project
+    └── README.md            # This file
+   ```
+The `MultiHashMap` implementation in DynaGox is inspired by the [F-IVM](https://github.com/fdbresearch/FIVM) project, which is licensed under the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
 ### Steps to Run Experiments
 
@@ -60,6 +77,3 @@ The SQL queries used in the experiments can be found in [Queries](Queries.md).
    bash ${SYSTEM_NAME}/experiments/scripts/run_all.sh
    # Results will be saved in ${SYSTEM_NAME}/experiments/log/
    ```
-
-
-
