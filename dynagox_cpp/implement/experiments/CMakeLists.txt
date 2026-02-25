@@ -59,7 +59,8 @@ add_library(crown_lib
         src/crown/crown_tpch10.cpp
         src/crown/crown_tpcds15.cpp
         src/crown/crown_tpcds19.cpp
-        src/crown/crown_line5s_d.cpp)
+        src/crown/crown_line5s_d.cpp
+        src/crown/crown_linek_count.cpp)
 target_include_directories(crown_lib PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
         ${CMAKE_CURRENT_SOURCE_DIR}/include/crown)

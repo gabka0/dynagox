@@ -7,6 +7,9 @@
 #include <cstddef>
 #include <cstdlib>
 #include <cstring>
+#ifdef _WIN32
+#include <malloc.h>
+#endif
 
 #define PRIMARY_HASH_INDEX_DEFAULT_CAPACITY 16384
 #define PRIMARY_HASH_INDEX_DEFAULT_LOAD_FACTOR 0.7
@@ -39,8 +42,13 @@ private:
     mask = capacity - 1;
     threshold = load_factor * capacity;
 
+#ifdef _WIN32
+    buckets = (Node *)_aligned_malloc(capacity * sizeof(Node), 64);
+    assert(buckets != nullptr);
+#else
     int r = posix_memalign((void **)&buckets, 64, capacity * sizeof(Node));
     assert(r == 0);
+#endif
     memset(buckets, 0, capacity * sizeof(Node));
 
     for (size_t i = 0; i < c; ++i) {
@@ -77,7 +85,13 @@ private:
       }
     }
 
-    delete[] b;
+    if (b != nullptr) {
+#ifdef _WIN32
+      _aligned_free(b);
+#else
+      free(b);
+#endif
+    }
   }
 
 public:
@@ -92,7 +106,11 @@ public:
   ~PrimaryHashIndex() {
     clear();
     if (buckets != nullptr) {
-      delete[] buckets;
+#ifdef _WIN32
+      _aligned_free(buckets);
+#else
+      free(buckets);
+#endif
       buckets = nullptr;
     }
     Singleton<MemoryPool<Node>>().release(pool);
