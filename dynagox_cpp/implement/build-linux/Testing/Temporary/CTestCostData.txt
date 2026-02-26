@@ -1,0 +1,64 @@
+MemoryPool: should return non-null pointer on allocate 1 0.0029492
+MemoryPool: should call constructor on new_element 1 0.00330439
+MemoryPool: should call destructor on delete_element 1 0.00270422
+MemoryPool: should reuse memory after delete_element 1 0.00214373
+MultiHashMap: should return nullptr on get for non-existent key 1 0.00309175
+MultiHashMap: should add new key with annotation on update_add 1 0.00326996
+MultiHashMap: should increase annotation on repeated update_add 1 0.00331168
+MultiHashMap: should add new key with annotation and approximate on update_add_approx 1 0.00407133
+MultiHashMap: should increase annotation and maintain approximate on repeated update_add_approx 1 0.00294248
+MultiHashMap: should return delta in approximate value on update_add_approx 1 0.00342318
+MultiHashMap: should activate an inactive key on update_activate 1 0.00448229
+MultiHashMap: should return true when activating inactive key on update_activate 1 0.00324368
+MultiHashMap: should return false when key is already active on update_activate 1 0.00281219
+MultiHashMap: should add new key with annotation and set active on update_add_and_activate 1 0.00264879
+MultiHashMap: should increase annotation on repeated update_add_and_activate 1 0.00283344
+MultiHashMap: should return true when activating inactive key on update_add_and_activate 1 0.00266966
+MultiHashMap: should return false when key is already active on update_add_and_activate 1 0.00269302
+MultiHashMap: should decrease annotation on update_subtract 1 0.00276513
+MultiHashMap: should remove key when annotation reaches zero on update_subtract 1 0.00399459
+MultiHashMap: should return true only when annotation is reduced to zero on update_subtract 1 0.0036356
+MultiHashMap: should decrease annotation and maintain approximate on update_subtract_approx 1 0.00357698
+MultiHashMap: should remove key when annotation reaches zero on update_subtract_approx 1 0.0037217
+MultiHashMap: should return delta in approximate value on update_subtract_approx 1 0.00307792
+MultiHashMap: should deactivate an active key on update_deactivate 1 0.00270512
+MultiHashMap: should return true when deactivating active key on update_deactivate 1 0.00380722
+MultiHashMap: should return false when key is already inactive on update_deactivate 1 0.00361604
+MultiHashMap: should add new key with annotation on update_max 1 0.002699
+MultiHashMap: should retain maximum annotation on repeated update_max 1 0.00409519
+MultiHashMap: should return true on update_max only if annotation was updated 1 0.00388989
+MultiHashMap: should add new key with annotation on update_max_approx 1 0.00408816
+MultiHashMap: should retain maximum annotation on repeated update_max_approx 1 0.00333239
+MultiHashMap: should return delta in approximate value on update_max_approx 1 0.00268229
+PrimaryHashIndex: should have default capacity after initialization 1 0.00327062
+PrimaryHashIndex: should insert elements on put 1 0.00302042
+PrimaryHashIndex: should retrieve matching element on get 1 0.00256564
+PrimaryHashIndex: should remove element on remove 1 0.00229414
+PrimaryHashIndex: should resize when threshold is exceeded 1 0.00299241
+PrimaryHashIndex: should track the number of keys correctly 1 0.00237151
+SecondaryHashIndex: should have default capacity after initialization 1 0.00242478
+SecondaryHashIndex: should insert elements on put 1 0.00337048
+SecondaryHashIndex: should retrieve matching elements on find 1 0.00293133
+SecondaryHashIndex: should remove element on remove 1 0.00335379
+SecondaryHashIndex: should resize when threshold is exceeded 1 0.00353829
+SecondaryHashIndex: should track the number of distinct keys correctly 1 0.00371428
+Singleton: should return an instance on acquire 1 0.00352759
+Singleton: should return the same instance on multiple acquire 1 0.00250053
+Singleton: should create a new instance after full release 1 0.00292949
+Singleton: should retain the instance on partial release 1 0.0023997
+Utils: should print execution time in ms on print_execution_time 1 0.00277877
+Utils: should compute b for given epsilon and n on get_b 1 0.00325856
+CrownLinekCount: fuzz k=2 a=1 b=2 1 0.00779489
+CrownLinekCount: fuzz k=3 a=2 b=3 1 0.0101728
+CrownLinekCount: fuzz k=4 a=1 b=3 1 0.0129857
+CrownLinekCount: fuzz k=3 a=1 b=1 1 0.00978404
+CrownLinekCount: Qichen example k=3 a=3 b=4 gives 4 1 0.00933764
+CrownLinekCount: deletions decrease counts and remove stale keys 1 0.00944137
+CrownLinekCount: a==b single-key group-by count correctness 1 0.00944012
+CrownLinekCount: a==b internal key group-by count correctness 1 0.00921855
+CrownLinekCount: a==b first key group-by count correctness 1 0.0105032
+CrownLinekCount: a==b last key group-by count correctness 1 0.0092827
+CrownLinekCount: explicit relation root for Line(4,2,3) 1 0.0110056
+CrownLinekCount: explicit variable root for Line(4,2,4) 1 0.0113981
+CrownLinekCount: explicit relation root for Line(4,2,4) 1 0.0114439
+---

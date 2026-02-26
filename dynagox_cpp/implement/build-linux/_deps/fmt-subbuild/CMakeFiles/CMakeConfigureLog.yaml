@@ -1,0 +1,85 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/kassym/.miniconda/envs/dynagox-dev/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:16 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/kassym/.miniconda/envs/dynagox-dev/bin/"
+      - "/home/kassym/.miniconda/envs/dynagox-dev/sbin/"
+      - "/home/kassym/.miniconda/envs/dynagox-dev/"
+      - "/home/kassym/.miniconda/envs/dynagox-dev/x86_64-conda-linux-gnu/sysroot/usr/bin/"
+      - "/home/kassym/.miniconda/envs/dynagox-dev/x86_64-conda-linux-gnu/sysroot/usr/sbin/"
+      - "/home/kassym/.miniconda/envs/dynagox-dev/x86_64-conda-linux-gnu/sysroot/usr/"
+      - "/home/kassym/.miniconda/envs/dynagox-dev/bin/"
+      - "/home/kassym/.miniconda/condabin/"
+      - "/home/kassym/.local/bin/"
+      - "/home/kassym/.codex/tmp/arg0/codex-arg07KZonn/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+      - "/home/kassym/.vscode/extensions/openai.chatgpt-0.4.76-linux-x64/bin/linux-x86_64/"
+    searched_directories:
+      - "/home/kassym/.miniconda/envs/dynagox-dev/bin/uname"
+      - "/home/kassym/.miniconda/envs/dynagox-dev/sbin/uname"
+      - "/home/kassym/.miniconda/envs/dynagox-dev/uname"
+      - "/home/kassym/.miniconda/envs/dynagox-dev/x86_64-conda-linux-gnu/sysroot/usr/bin/uname"
+      - "/home/kassym/.miniconda/envs/dynagox-dev/x86_64-conda-linux-gnu/sysroot/usr/sbin/uname"
+      - "/home/kassym/.miniconda/envs/dynagox-dev/x86_64-conda-linux-gnu/sysroot/usr/uname"
+      - "/home/kassym/.miniconda/envs/dynagox-dev/bin/uname"
+      - "/home/kassym/.miniconda/condabin/uname"
+      - "/home/kassym/.local/bin/uname"
+      - "/home/kassym/.codex/tmp/arg0/codex-arg07KZonn/uname"
+      - "/usr/local/sbin/uname"
+      - "/usr/local/bin/uname"
+      - "/usr/sbin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/home/kassym/.miniconda/envs/dynagox-dev"
+        - "/home/kassym/.miniconda/envs/dynagox-dev/x86_64-conda-linux-gnu/sysroot/usr"
+      ENV{PATH}:
+        - "/home/kassym/.miniconda/envs/dynagox-dev/bin"
+        - "/home/kassym/.miniconda/condabin"
+        - "/home/kassym/.local/bin"
+        - "/home/kassym/.codex/tmp/arg0/codex-arg07KZonn"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/kassym/.vscode/extensions/openai.chatgpt-0.4.76-linux-x64/bin/linux-x86_64"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/kassym/.miniconda/envs/dynagox-dev/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "CMakeLists.txt:16 (project)"
+    message: |
+      The system is: Linux - 6.17.0-14-generic - x86_64
+...

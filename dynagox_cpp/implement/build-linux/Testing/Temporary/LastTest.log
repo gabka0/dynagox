@@ -1,0 +1,1265 @@
+Start testing: Feb 26 17:00 GMT
+----------------------------------------------------------
+1/63 Testing: MemoryPool: should return non-null pointer on allocate
+1/63 Test: MemoryPool: should return non-null pointer on allocate
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MemoryPool: should return non-null pointer on allocate"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MemoryPool: should return non-null pointer on allocate" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MemoryPool: should return non-null pointer on allocate"
+Randomness seeded to: 3893331751
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MemoryPool: should return non-null pointer on allocate" end time: Feb 26 17:00 GMT
+"MemoryPool: should return non-null pointer on allocate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/63 Testing: MemoryPool: should call constructor on new_element
+2/63 Test: MemoryPool: should call constructor on new_element
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MemoryPool: should call constructor on new_element"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MemoryPool: should call constructor on new_element" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MemoryPool: should call constructor on new_element"
+Randomness seeded to: 3877158660
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MemoryPool: should call constructor on new_element" end time: Feb 26 17:00 GMT
+"MemoryPool: should call constructor on new_element" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/63 Testing: MemoryPool: should call destructor on delete_element
+3/63 Test: MemoryPool: should call destructor on delete_element
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MemoryPool: should call destructor on delete_element"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MemoryPool: should call destructor on delete_element" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MemoryPool: should call destructor on delete_element"
+Randomness seeded to: 2999561254
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MemoryPool: should call destructor on delete_element" end time: Feb 26 17:00 GMT
+"MemoryPool: should call destructor on delete_element" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/63 Testing: MemoryPool: should reuse memory after delete_element
+4/63 Test: MemoryPool: should reuse memory after delete_element
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MemoryPool: should reuse memory after delete_element"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MemoryPool: should reuse memory after delete_element" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MemoryPool: should reuse memory after delete_element"
+Randomness seeded to: 2703847955
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MemoryPool: should reuse memory after delete_element" end time: Feb 26 17:00 GMT
+"MemoryPool: should reuse memory after delete_element" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/63 Testing: MultiHashMap: should return nullptr on get for non-existent key
+5/63 Test: MultiHashMap: should return nullptr on get for non-existent key
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should return nullptr on get for non-existent key"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should return nullptr on get for non-existent key" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should return nullptr on get for non-existent key"
+Randomness seeded to: 2866348453
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should return nullptr on get for non-existent key" end time: Feb 26 17:00 GMT
+"MultiHashMap: should return nullptr on get for non-existent key" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/63 Testing: MultiHashMap: should add new key with annotation on update_add
+6/63 Test: MultiHashMap: should add new key with annotation on update_add
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should add new key with annotation on update_add"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should add new key with annotation on update_add" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should add new key with annotation on update_add"
+Randomness seeded to: 1019060958
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should add new key with annotation on update_add" end time: Feb 26 17:00 GMT
+"MultiHashMap: should add new key with annotation on update_add" time elapsed: 00:00:00
+----------------------------------------------------------
+
+7/63 Testing: MultiHashMap: should increase annotation on repeated update_add
+7/63 Test: MultiHashMap: should increase annotation on repeated update_add
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should increase annotation on repeated update_add"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should increase annotation on repeated update_add" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should increase annotation on repeated update_add"
+Randomness seeded to: 3213043794
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should increase annotation on repeated update_add" end time: Feb 26 17:00 GMT
+"MultiHashMap: should increase annotation on repeated update_add" time elapsed: 00:00:00
+----------------------------------------------------------
+
+8/63 Testing: MultiHashMap: should add new key with annotation and approximate on update_add_approx
+8/63 Test: MultiHashMap: should add new key with annotation and approximate on update_add_approx
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should add new key with annotation and approximate on update_add_approx"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should add new key with annotation and approximate on update_add_approx" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should add new key with annotation and approximate on update_add_approx"
+Randomness seeded to: 444162638
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should add new key with annotation and approximate on update_add_approx" end time: Feb 26 17:00 GMT
+"MultiHashMap: should add new key with annotation and approximate on update_add_approx" time elapsed: 00:00:00
+----------------------------------------------------------
+
+9/63 Testing: MultiHashMap: should increase annotation and maintain approximate on repeated update_add_approx
+9/63 Test: MultiHashMap: should increase annotation and maintain approximate on repeated update_add_approx
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should increase annotation and maintain approximate on repeated update_add_approx"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should increase annotation and maintain approximate on repeated update_add_approx" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should increase annotation and maintain approximate on repeated update_add_approx"
+Randomness seeded to: 3583838054
+===============================================================================
+All tests passed (6 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should increase annotation and maintain approximate on repeated update_add_approx" end time: Feb 26 17:00 GMT
+"MultiHashMap: should increase annotation and maintain approximate on repeated update_add_approx" time elapsed: 00:00:00
+----------------------------------------------------------
+
+10/63 Testing: MultiHashMap: should return delta in approximate value on update_add_approx
+10/63 Test: MultiHashMap: should return delta in approximate value on update_add_approx
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should return delta in approximate value on update_add_approx"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should return delta in approximate value on update_add_approx" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should return delta in approximate value on update_add_approx"
+Randomness seeded to: 85719064
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should return delta in approximate value on update_add_approx" end time: Feb 26 17:00 GMT
+"MultiHashMap: should return delta in approximate value on update_add_approx" time elapsed: 00:00:00
+----------------------------------------------------------
+
+11/63 Testing: MultiHashMap: should activate an inactive key on update_activate
+11/63 Test: MultiHashMap: should activate an inactive key on update_activate
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should activate an inactive key on update_activate"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should activate an inactive key on update_activate" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should activate an inactive key on update_activate"
+Randomness seeded to: 2590694662
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should activate an inactive key on update_activate" end time: Feb 26 17:00 GMT
+"MultiHashMap: should activate an inactive key on update_activate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+12/63 Testing: MultiHashMap: should return true when activating inactive key on update_activate
+12/63 Test: MultiHashMap: should return true when activating inactive key on update_activate
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should return true when activating inactive key on update_activate"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should return true when activating inactive key on update_activate" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should return true when activating inactive key on update_activate"
+Randomness seeded to: 743835725
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should return true when activating inactive key on update_activate" end time: Feb 26 17:00 GMT
+"MultiHashMap: should return true when activating inactive key on update_activate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+13/63 Testing: MultiHashMap: should return false when key is already active on update_activate
+13/63 Test: MultiHashMap: should return false when key is already active on update_activate
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should return false when key is already active on update_activate"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should return false when key is already active on update_activate" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should return false when key is already active on update_activate"
+Randomness seeded to: 142247
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should return false when key is already active on update_activate" end time: Feb 26 17:00 GMT
+"MultiHashMap: should return false when key is already active on update_activate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+14/63 Testing: MultiHashMap: should add new key with annotation and set active on update_add_and_activate
+14/63 Test: MultiHashMap: should add new key with annotation and set active on update_add_and_activate
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should add new key with annotation and set active on update_add_and_activate"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should add new key with annotation and set active on update_add_and_activate" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should add new key with annotation and set active on update_add_and_activate"
+Randomness seeded to: 1255171749
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should add new key with annotation and set active on update_add_and_activate" end time: Feb 26 17:00 GMT
+"MultiHashMap: should add new key with annotation and set active on update_add_and_activate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+15/63 Testing: MultiHashMap: should increase annotation on repeated update_add_and_activate
+15/63 Test: MultiHashMap: should increase annotation on repeated update_add_and_activate
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should increase annotation on repeated update_add_and_activate"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should increase annotation on repeated update_add_and_activate" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should increase annotation on repeated update_add_and_activate"
+Randomness seeded to: 610118035
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should increase annotation on repeated update_add_and_activate" end time: Feb 26 17:00 GMT
+"MultiHashMap: should increase annotation on repeated update_add_and_activate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+16/63 Testing: MultiHashMap: should return true when activating inactive key on update_add_and_activate
+16/63 Test: MultiHashMap: should return true when activating inactive key on update_add_and_activate
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should return true when activating inactive key on update_add_and_activate"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should return true when activating inactive key on update_add_and_activate" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should return true when activating inactive key on update_add_and_activate"
+Randomness seeded to: 2286931872
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should return true when activating inactive key on update_add_and_activate" end time: Feb 26 17:00 GMT
+"MultiHashMap: should return true when activating inactive key on update_add_and_activate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+17/63 Testing: MultiHashMap: should return false when key is already active on update_add_and_activate
+17/63 Test: MultiHashMap: should return false when key is already active on update_add_and_activate
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should return false when key is already active on update_add_and_activate"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should return false when key is already active on update_add_and_activate" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should return false when key is already active on update_add_and_activate"
+Randomness seeded to: 765112640
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should return false when key is already active on update_add_and_activate" end time: Feb 26 17:00 GMT
+"MultiHashMap: should return false when key is already active on update_add_and_activate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+18/63 Testing: MultiHashMap: should decrease annotation on update_subtract
+18/63 Test: MultiHashMap: should decrease annotation on update_subtract
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should decrease annotation on update_subtract"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should decrease annotation on update_subtract" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should decrease annotation on update_subtract"
+Randomness seeded to: 2011813752
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should decrease annotation on update_subtract" end time: Feb 26 17:00 GMT
+"MultiHashMap: should decrease annotation on update_subtract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+19/63 Testing: MultiHashMap: should remove key when annotation reaches zero on update_subtract
+19/63 Test: MultiHashMap: should remove key when annotation reaches zero on update_subtract
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should remove key when annotation reaches zero on update_subtract"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should remove key when annotation reaches zero on update_subtract" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should remove key when annotation reaches zero on update_subtract"
+Randomness seeded to: 4033741249
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should remove key when annotation reaches zero on update_subtract" end time: Feb 26 17:00 GMT
+"MultiHashMap: should remove key when annotation reaches zero on update_subtract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+20/63 Testing: MultiHashMap: should return true only when annotation is reduced to zero on update_subtract
+20/63 Test: MultiHashMap: should return true only when annotation is reduced to zero on update_subtract
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should return true only when annotation is reduced to zero on update_subtract"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should return true only when annotation is reduced to zero on update_subtract" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should return true only when annotation is reduced to zero on update_subtract"
+Randomness seeded to: 1300197659
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should return true only when annotation is reduced to zero on update_subtract" end time: Feb 26 17:00 GMT
+"MultiHashMap: should return true only when annotation is reduced to zero on update_subtract" time elapsed: 00:00:00
+----------------------------------------------------------
+
+21/63 Testing: MultiHashMap: should decrease annotation and maintain approximate on update_subtract_approx
+21/63 Test: MultiHashMap: should decrease annotation and maintain approximate on update_subtract_approx
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should decrease annotation and maintain approximate on update_subtract_approx"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should decrease annotation and maintain approximate on update_subtract_approx" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should decrease annotation and maintain approximate on update_subtract_approx"
+Randomness seeded to: 2493603218
+===============================================================================
+All tests passed (9 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should decrease annotation and maintain approximate on update_subtract_approx" end time: Feb 26 17:00 GMT
+"MultiHashMap: should decrease annotation and maintain approximate on update_subtract_approx" time elapsed: 00:00:00
+----------------------------------------------------------
+
+22/63 Testing: MultiHashMap: should remove key when annotation reaches zero on update_subtract_approx
+22/63 Test: MultiHashMap: should remove key when annotation reaches zero on update_subtract_approx
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should remove key when annotation reaches zero on update_subtract_approx"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should remove key when annotation reaches zero on update_subtract_approx" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should remove key when annotation reaches zero on update_subtract_approx"
+Randomness seeded to: 2550990529
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should remove key when annotation reaches zero on update_subtract_approx" end time: Feb 26 17:00 GMT
+"MultiHashMap: should remove key when annotation reaches zero on update_subtract_approx" time elapsed: 00:00:00
+----------------------------------------------------------
+
+23/63 Testing: MultiHashMap: should return delta in approximate value on update_subtract_approx
+23/63 Test: MultiHashMap: should return delta in approximate value on update_subtract_approx
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should return delta in approximate value on update_subtract_approx"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should return delta in approximate value on update_subtract_approx" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should return delta in approximate value on update_subtract_approx"
+Randomness seeded to: 477117683
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should return delta in approximate value on update_subtract_approx" end time: Feb 26 17:00 GMT
+"MultiHashMap: should return delta in approximate value on update_subtract_approx" time elapsed: 00:00:00
+----------------------------------------------------------
+
+24/63 Testing: MultiHashMap: should deactivate an active key on update_deactivate
+24/63 Test: MultiHashMap: should deactivate an active key on update_deactivate
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should deactivate an active key on update_deactivate"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should deactivate an active key on update_deactivate" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should deactivate an active key on update_deactivate"
+Randomness seeded to: 2198886846
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should deactivate an active key on update_deactivate" end time: Feb 26 17:00 GMT
+"MultiHashMap: should deactivate an active key on update_deactivate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+25/63 Testing: MultiHashMap: should return true when deactivating active key on update_deactivate
+25/63 Test: MultiHashMap: should return true when deactivating active key on update_deactivate
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should return true when deactivating active key on update_deactivate"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should return true when deactivating active key on update_deactivate" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should return true when deactivating active key on update_deactivate"
+Randomness seeded to: 3739286984
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should return true when deactivating active key on update_deactivate" end time: Feb 26 17:00 GMT
+"MultiHashMap: should return true when deactivating active key on update_deactivate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+26/63 Testing: MultiHashMap: should return false when key is already inactive on update_deactivate
+26/63 Test: MultiHashMap: should return false when key is already inactive on update_deactivate
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should return false when key is already inactive on update_deactivate"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should return false when key is already inactive on update_deactivate" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should return false when key is already inactive on update_deactivate"
+Randomness seeded to: 3663330633
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should return false when key is already inactive on update_deactivate" end time: Feb 26 17:00 GMT
+"MultiHashMap: should return false when key is already inactive on update_deactivate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+27/63 Testing: MultiHashMap: should add new key with annotation on update_max
+27/63 Test: MultiHashMap: should add new key with annotation on update_max
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should add new key with annotation on update_max"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should add new key with annotation on update_max" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should add new key with annotation on update_max"
+Randomness seeded to: 2567961577
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should add new key with annotation on update_max" end time: Feb 26 17:00 GMT
+"MultiHashMap: should add new key with annotation on update_max" time elapsed: 00:00:00
+----------------------------------------------------------
+
+28/63 Testing: MultiHashMap: should retain maximum annotation on repeated update_max
+28/63 Test: MultiHashMap: should retain maximum annotation on repeated update_max
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should retain maximum annotation on repeated update_max"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should retain maximum annotation on repeated update_max" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should retain maximum annotation on repeated update_max"
+Randomness seeded to: 2848447602
+===============================================================================
+All tests passed (6 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should retain maximum annotation on repeated update_max" end time: Feb 26 17:00 GMT
+"MultiHashMap: should retain maximum annotation on repeated update_max" time elapsed: 00:00:00
+----------------------------------------------------------
+
+29/63 Testing: MultiHashMap: should return true on update_max only if annotation was updated
+29/63 Test: MultiHashMap: should return true on update_max only if annotation was updated
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should return true on update_max only if annotation was updated"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should return true on update_max only if annotation was updated" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should return true on update_max only if annotation was updated"
+Randomness seeded to: 647664431
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should return true on update_max only if annotation was updated" end time: Feb 26 17:00 GMT
+"MultiHashMap: should return true on update_max only if annotation was updated" time elapsed: 00:00:00
+----------------------------------------------------------
+
+30/63 Testing: MultiHashMap: should add new key with annotation on update_max_approx
+30/63 Test: MultiHashMap: should add new key with annotation on update_max_approx
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should add new key with annotation on update_max_approx"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should add new key with annotation on update_max_approx" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should add new key with annotation on update_max_approx"
+Randomness seeded to: 940512138
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should add new key with annotation on update_max_approx" end time: Feb 26 17:00 GMT
+"MultiHashMap: should add new key with annotation on update_max_approx" time elapsed: 00:00:00
+----------------------------------------------------------
+
+31/63 Testing: MultiHashMap: should retain maximum annotation on repeated update_max_approx
+31/63 Test: MultiHashMap: should retain maximum annotation on repeated update_max_approx
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should retain maximum annotation on repeated update_max_approx"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should retain maximum annotation on repeated update_max_approx" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should retain maximum annotation on repeated update_max_approx"
+Randomness seeded to: 2045060448
+===============================================================================
+All tests passed (9 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should retain maximum annotation on repeated update_max_approx" end time: Feb 26 17:00 GMT
+"MultiHashMap: should retain maximum annotation on repeated update_max_approx" time elapsed: 00:00:00
+----------------------------------------------------------
+
+32/63 Testing: MultiHashMap: should return delta in approximate value on update_max_approx
+32/63 Test: MultiHashMap: should return delta in approximate value on update_max_approx
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "MultiHashMap: should return delta in approximate value on update_max_approx"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"MultiHashMap: should return delta in approximate value on update_max_approx" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "MultiHashMap: should return delta in approximate value on update_max_approx"
+Randomness seeded to: 346004536
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"MultiHashMap: should return delta in approximate value on update_max_approx" end time: Feb 26 17:00 GMT
+"MultiHashMap: should return delta in approximate value on update_max_approx" time elapsed: 00:00:00
+----------------------------------------------------------
+
+33/63 Testing: PrimaryHashIndex: should have default capacity after initialization
+33/63 Test: PrimaryHashIndex: should have default capacity after initialization
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "PrimaryHashIndex: should have default capacity after initialization"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"PrimaryHashIndex: should have default capacity after initialization" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "PrimaryHashIndex: should have default capacity after initialization"
+Randomness seeded to: 4276428408
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PrimaryHashIndex: should have default capacity after initialization" end time: Feb 26 17:00 GMT
+"PrimaryHashIndex: should have default capacity after initialization" time elapsed: 00:00:00
+----------------------------------------------------------
+
+34/63 Testing: PrimaryHashIndex: should insert elements on put
+34/63 Test: PrimaryHashIndex: should insert elements on put
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "PrimaryHashIndex: should insert elements on put"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"PrimaryHashIndex: should insert elements on put" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "PrimaryHashIndex: should insert elements on put"
+Randomness seeded to: 974733652
+===============================================================================
+test cases: 1 | 1 passed
+assertions: - none -
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PrimaryHashIndex: should insert elements on put" end time: Feb 26 17:00 GMT
+"PrimaryHashIndex: should insert elements on put" time elapsed: 00:00:00
+----------------------------------------------------------
+
+35/63 Testing: PrimaryHashIndex: should retrieve matching element on get
+35/63 Test: PrimaryHashIndex: should retrieve matching element on get
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "PrimaryHashIndex: should retrieve matching element on get"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"PrimaryHashIndex: should retrieve matching element on get" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "PrimaryHashIndex: should retrieve matching element on get"
+Randomness seeded to: 2454594251
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PrimaryHashIndex: should retrieve matching element on get" end time: Feb 26 17:00 GMT
+"PrimaryHashIndex: should retrieve matching element on get" time elapsed: 00:00:00
+----------------------------------------------------------
+
+36/63 Testing: PrimaryHashIndex: should remove element on remove
+36/63 Test: PrimaryHashIndex: should remove element on remove
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "PrimaryHashIndex: should remove element on remove"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"PrimaryHashIndex: should remove element on remove" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "PrimaryHashIndex: should remove element on remove"
+Randomness seeded to: 2733383246
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PrimaryHashIndex: should remove element on remove" end time: Feb 26 17:00 GMT
+"PrimaryHashIndex: should remove element on remove" time elapsed: 00:00:00
+----------------------------------------------------------
+
+37/63 Testing: PrimaryHashIndex: should resize when threshold is exceeded
+37/63 Test: PrimaryHashIndex: should resize when threshold is exceeded
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "PrimaryHashIndex: should resize when threshold is exceeded"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"PrimaryHashIndex: should resize when threshold is exceeded" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "PrimaryHashIndex: should resize when threshold is exceeded"
+Randomness seeded to: 4019997288
+===============================================================================
+All tests passed (25 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PrimaryHashIndex: should resize when threshold is exceeded" end time: Feb 26 17:00 GMT
+"PrimaryHashIndex: should resize when threshold is exceeded" time elapsed: 00:00:00
+----------------------------------------------------------
+
+38/63 Testing: PrimaryHashIndex: should track the number of keys correctly
+38/63 Test: PrimaryHashIndex: should track the number of keys correctly
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "PrimaryHashIndex: should track the number of keys correctly"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"PrimaryHashIndex: should track the number of keys correctly" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "PrimaryHashIndex: should track the number of keys correctly"
+Randomness seeded to: 1722140852
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"PrimaryHashIndex: should track the number of keys correctly" end time: Feb 26 17:00 GMT
+"PrimaryHashIndex: should track the number of keys correctly" time elapsed: 00:00:00
+----------------------------------------------------------
+
+39/63 Testing: SecondaryHashIndex: should have default capacity after initialization
+39/63 Test: SecondaryHashIndex: should have default capacity after initialization
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "SecondaryHashIndex: should have default capacity after initialization"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"SecondaryHashIndex: should have default capacity after initialization" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "SecondaryHashIndex: should have default capacity after initialization"
+Randomness seeded to: 3254662194
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SecondaryHashIndex: should have default capacity after initialization" end time: Feb 26 17:00 GMT
+"SecondaryHashIndex: should have default capacity after initialization" time elapsed: 00:00:00
+----------------------------------------------------------
+
+40/63 Testing: SecondaryHashIndex: should insert elements on put
+40/63 Test: SecondaryHashIndex: should insert elements on put
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "SecondaryHashIndex: should insert elements on put"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"SecondaryHashIndex: should insert elements on put" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "SecondaryHashIndex: should insert elements on put"
+Randomness seeded to: 3717730624
+===============================================================================
+test cases: 1 | 1 passed
+assertions: - none -
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SecondaryHashIndex: should insert elements on put" end time: Feb 26 17:00 GMT
+"SecondaryHashIndex: should insert elements on put" time elapsed: 00:00:00
+----------------------------------------------------------
+
+41/63 Testing: SecondaryHashIndex: should retrieve matching elements on find
+41/63 Test: SecondaryHashIndex: should retrieve matching elements on find
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "SecondaryHashIndex: should retrieve matching elements on find"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"SecondaryHashIndex: should retrieve matching elements on find" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "SecondaryHashIndex: should retrieve matching elements on find"
+Randomness seeded to: 1618128831
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SecondaryHashIndex: should retrieve matching elements on find" end time: Feb 26 17:00 GMT
+"SecondaryHashIndex: should retrieve matching elements on find" time elapsed: 00:00:00
+----------------------------------------------------------
+
+42/63 Testing: SecondaryHashIndex: should remove element on remove
+42/63 Test: SecondaryHashIndex: should remove element on remove
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "SecondaryHashIndex: should remove element on remove"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"SecondaryHashIndex: should remove element on remove" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "SecondaryHashIndex: should remove element on remove"
+Randomness seeded to: 1640413145
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SecondaryHashIndex: should remove element on remove" end time: Feb 26 17:00 GMT
+"SecondaryHashIndex: should remove element on remove" time elapsed: 00:00:00
+----------------------------------------------------------
+
+43/63 Testing: SecondaryHashIndex: should resize when threshold is exceeded
+43/63 Test: SecondaryHashIndex: should resize when threshold is exceeded
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "SecondaryHashIndex: should resize when threshold is exceeded"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"SecondaryHashIndex: should resize when threshold is exceeded" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "SecondaryHashIndex: should resize when threshold is exceeded"
+Randomness seeded to: 3165864167
+===============================================================================
+All tests passed (26 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SecondaryHashIndex: should resize when threshold is exceeded" end time: Feb 26 17:00 GMT
+"SecondaryHashIndex: should resize when threshold is exceeded" time elapsed: 00:00:00
+----------------------------------------------------------
+
+44/63 Testing: SecondaryHashIndex: should track the number of distinct keys correctly
+44/63 Test: SecondaryHashIndex: should track the number of distinct keys correctly
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "SecondaryHashIndex: should track the number of distinct keys correctly"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"SecondaryHashIndex: should track the number of distinct keys correctly" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "SecondaryHashIndex: should track the number of distinct keys correctly"
+Randomness seeded to: 1791331731
+===============================================================================
+All tests passed (4 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"SecondaryHashIndex: should track the number of distinct keys correctly" end time: Feb 26 17:00 GMT
+"SecondaryHashIndex: should track the number of distinct keys correctly" time elapsed: 00:00:00
+----------------------------------------------------------
+
+45/63 Testing: Singleton: should return an instance on acquire
+45/63 Test: Singleton: should return an instance on acquire
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "Singleton: should return an instance on acquire"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"Singleton: should return an instance on acquire" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "Singleton: should return an instance on acquire"
+Randomness seeded to: 1235196641
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Singleton: should return an instance on acquire" end time: Feb 26 17:00 GMT
+"Singleton: should return an instance on acquire" time elapsed: 00:00:00
+----------------------------------------------------------
+
+46/63 Testing: Singleton: should return the same instance on multiple acquire
+46/63 Test: Singleton: should return the same instance on multiple acquire
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "Singleton: should return the same instance on multiple acquire"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"Singleton: should return the same instance on multiple acquire" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "Singleton: should return the same instance on multiple acquire"
+Randomness seeded to: 2802213901
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Singleton: should return the same instance on multiple acquire" end time: Feb 26 17:00 GMT
+"Singleton: should return the same instance on multiple acquire" time elapsed: 00:00:00
+----------------------------------------------------------
+
+47/63 Testing: Singleton: should create a new instance after full release
+47/63 Test: Singleton: should create a new instance after full release
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "Singleton: should create a new instance after full release"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"Singleton: should create a new instance after full release" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "Singleton: should create a new instance after full release"
+Randomness seeded to: 1487716734
+===============================================================================
+All tests passed (2 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Singleton: should create a new instance after full release" end time: Feb 26 17:00 GMT
+"Singleton: should create a new instance after full release" time elapsed: 00:00:00
+----------------------------------------------------------
+
+48/63 Testing: Singleton: should retain the instance on partial release
+48/63 Test: Singleton: should retain the instance on partial release
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "Singleton: should retain the instance on partial release"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"Singleton: should retain the instance on partial release" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "Singleton: should retain the instance on partial release"
+Randomness seeded to: 3568175800
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Singleton: should retain the instance on partial release" end time: Feb 26 17:00 GMT
+"Singleton: should retain the instance on partial release" time elapsed: 00:00:00
+----------------------------------------------------------
+
+49/63 Testing: Utils: should print execution time in ms on print_execution_time
+49/63 Test: Utils: should print execution time in ms on print_execution_time
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "Utils: should print execution time in ms on print_execution_time"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"Utils: should print execution time in ms on print_execution_time" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "Utils: should print execution time in ms on print_execution_time"
+Randomness seeded to: 2987880056
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Utils: should print execution time in ms on print_execution_time" end time: Feb 26 17:00 GMT
+"Utils: should print execution time in ms on print_execution_time" time elapsed: 00:00:00
+----------------------------------------------------------
+
+50/63 Testing: Utils: should compute b for given epsilon and n on get_b
+50/63 Test: Utils: should compute b for given epsilon and n on get_b
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "Utils: should compute b for given epsilon and n on get_b"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"Utils: should compute b for given epsilon and n on get_b" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "Utils: should compute b for given epsilon and n on get_b"
+Randomness seeded to: 620139511
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"Utils: should compute b for given epsilon and n on get_b" end time: Feb 26 17:00 GMT
+"Utils: should compute b for given epsilon and n on get_b" time elapsed: 00:00:00
+----------------------------------------------------------
+
+51/63 Testing: CrownLinekCount: fuzz k=2 a=1 b=2
+51/63 Test: CrownLinekCount: fuzz k=2 a=1 b=2
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "CrownLinekCount: fuzz k=2 a=1 b=2"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"CrownLinekCount: fuzz k=2 a=1 b=2" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "CrownLinekCount: fuzz k=2 a=1 b=2"
+Randomness seeded to: 637918494
+===============================================================================
+All tests passed (993 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CrownLinekCount: fuzz k=2 a=1 b=2" end time: Feb 26 17:00 GMT
+"CrownLinekCount: fuzz k=2 a=1 b=2" time elapsed: 00:00:00
+----------------------------------------------------------
+
+52/63 Testing: CrownLinekCount: fuzz k=3 a=2 b=3
+52/63 Test: CrownLinekCount: fuzz k=3 a=2 b=3
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "CrownLinekCount: fuzz k=3 a=2 b=3"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"CrownLinekCount: fuzz k=3 a=2 b=3" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "CrownLinekCount: fuzz k=3 a=2 b=3"
+Randomness seeded to: 2782486158
+===============================================================================
+All tests passed (750 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CrownLinekCount: fuzz k=3 a=2 b=3" end time: Feb 26 17:00 GMT
+"CrownLinekCount: fuzz k=3 a=2 b=3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+53/63 Testing: CrownLinekCount: fuzz k=4 a=1 b=3
+53/63 Test: CrownLinekCount: fuzz k=4 a=1 b=3
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "CrownLinekCount: fuzz k=4 a=1 b=3"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"CrownLinekCount: fuzz k=4 a=1 b=3" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "CrownLinekCount: fuzz k=4 a=1 b=3"
+Randomness seeded to: 3169547427
+===============================================================================
+All tests passed (1954 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CrownLinekCount: fuzz k=4 a=1 b=3" end time: Feb 26 17:00 GMT
+"CrownLinekCount: fuzz k=4 a=1 b=3" time elapsed: 00:00:00
+----------------------------------------------------------
+
+54/63 Testing: CrownLinekCount: fuzz k=3 a=1 b=1
+54/63 Test: CrownLinekCount: fuzz k=3 a=1 b=1
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "CrownLinekCount: fuzz k=3 a=1 b=1"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"CrownLinekCount: fuzz k=3 a=1 b=1" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "CrownLinekCount: fuzz k=3 a=1 b=1"
+Randomness seeded to: 3814010010
+===============================================================================
+All tests passed (353 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CrownLinekCount: fuzz k=3 a=1 b=1" end time: Feb 26 17:00 GMT
+"CrownLinekCount: fuzz k=3 a=1 b=1" time elapsed: 00:00:00
+----------------------------------------------------------
+
+55/63 Testing: CrownLinekCount: Qichen example k=3 a=3 b=4 gives 4
+55/63 Test: CrownLinekCount: Qichen example k=3 a=3 b=4 gives 4
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "CrownLinekCount: Qichen example k=3 a=3 b=4 gives 4"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"CrownLinekCount: Qichen example k=3 a=3 b=4 gives 4" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "CrownLinekCount: Qichen example k=3 a=3 b=4 gives 4"
+Randomness seeded to: 2751762076
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CrownLinekCount: Qichen example k=3 a=3 b=4 gives 4" end time: Feb 26 17:00 GMT
+"CrownLinekCount: Qichen example k=3 a=3 b=4 gives 4" time elapsed: 00:00:00
+----------------------------------------------------------
+
+56/63 Testing: CrownLinekCount: deletions decrease counts and remove stale keys
+56/63 Test: CrownLinekCount: deletions decrease counts and remove stale keys
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "CrownLinekCount: deletions decrease counts and remove stale keys"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"CrownLinekCount: deletions decrease counts and remove stale keys" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "CrownLinekCount: deletions decrease counts and remove stale keys"
+Randomness seeded to: 4103889526
+===============================================================================
+All tests passed (7 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CrownLinekCount: deletions decrease counts and remove stale keys" end time: Feb 26 17:00 GMT
+"CrownLinekCount: deletions decrease counts and remove stale keys" time elapsed: 00:00:00
+----------------------------------------------------------
+
+57/63 Testing: CrownLinekCount: a==b single-key group-by count correctness
+57/63 Test: CrownLinekCount: a==b single-key group-by count correctness
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "CrownLinekCount: a==b single-key group-by count correctness"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"CrownLinekCount: a==b single-key group-by count correctness" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "CrownLinekCount: a==b single-key group-by count correctness"
+Randomness seeded to: 3894251863
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CrownLinekCount: a==b single-key group-by count correctness" end time: Feb 26 17:00 GMT
+"CrownLinekCount: a==b single-key group-by count correctness" time elapsed: 00:00:00
+----------------------------------------------------------
+
+58/63 Testing: CrownLinekCount: a==b internal key group-by count correctness
+58/63 Test: CrownLinekCount: a==b internal key group-by count correctness
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "CrownLinekCount: a==b internal key group-by count correctness"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"CrownLinekCount: a==b internal key group-by count correctness" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "CrownLinekCount: a==b internal key group-by count correctness"
+Randomness seeded to: 1296977864
+===============================================================================
+All tests passed (5 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CrownLinekCount: a==b internal key group-by count correctness" end time: Feb 26 17:00 GMT
+"CrownLinekCount: a==b internal key group-by count correctness" time elapsed: 00:00:00
+----------------------------------------------------------
+
+59/63 Testing: CrownLinekCount: a==b first key group-by count correctness
+59/63 Test: CrownLinekCount: a==b first key group-by count correctness
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "CrownLinekCount: a==b first key group-by count correctness"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"CrownLinekCount: a==b first key group-by count correctness" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "CrownLinekCount: a==b first key group-by count correctness"
+Randomness seeded to: 922126307
+===============================================================================
+All tests passed (5 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CrownLinekCount: a==b first key group-by count correctness" end time: Feb 26 17:00 GMT
+"CrownLinekCount: a==b first key group-by count correctness" time elapsed: 00:00:00
+----------------------------------------------------------
+
+60/63 Testing: CrownLinekCount: a==b last key group-by count correctness
+60/63 Test: CrownLinekCount: a==b last key group-by count correctness
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "CrownLinekCount: a==b last key group-by count correctness"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"CrownLinekCount: a==b last key group-by count correctness" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "CrownLinekCount: a==b last key group-by count correctness"
+Randomness seeded to: 1090344305
+===============================================================================
+All tests passed (3 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CrownLinekCount: a==b last key group-by count correctness" end time: Feb 26 17:00 GMT
+"CrownLinekCount: a==b last key group-by count correctness" time elapsed: 00:00:00
+----------------------------------------------------------
+
+61/63 Testing: CrownLinekCount: explicit relation root for Line(4,2,3)
+61/63 Test: CrownLinekCount: explicit relation root for Line(4,2,3)
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "CrownLinekCount: explicit relation root for Line(4\,2\,3)"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"CrownLinekCount: explicit relation root for Line(4,2,3)" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "CrownLinekCount: explicit relation root for Line(4\,2\,3)"
+Randomness seeded to: 917532684
+===============================================================================
+All tests passed (5 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CrownLinekCount: explicit relation root for Line(4,2,3)" end time: Feb 26 17:00 GMT
+"CrownLinekCount: explicit relation root for Line(4,2,3)" time elapsed: 00:00:00
+----------------------------------------------------------
+
+62/63 Testing: CrownLinekCount: explicit variable root for Line(4,2,4)
+62/63 Test: CrownLinekCount: explicit variable root for Line(4,2,4)
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "CrownLinekCount: explicit variable root for Line(4\,2\,4)"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"CrownLinekCount: explicit variable root for Line(4,2,4)" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "CrownLinekCount: explicit variable root for Line(4\,2\,4)"
+Randomness seeded to: 4021680210
+===============================================================================
+All tests passed (5 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CrownLinekCount: explicit variable root for Line(4,2,4)" end time: Feb 26 17:00 GMT
+"CrownLinekCount: explicit variable root for Line(4,2,4)" time elapsed: 00:00:00
+----------------------------------------------------------
+
+63/63 Testing: CrownLinekCount: explicit relation root for Line(4,2,4)
+63/63 Test: CrownLinekCount: explicit relation root for Line(4,2,4)
+Command: "/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/tests" "CrownLinekCount: explicit relation root for Line(4\,2\,4)"
+Directory: /home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests
+"CrownLinekCount: explicit relation root for Line(4,2,4)" start time: Feb 26 17:00 GMT
+Output:
+----------------------------------------------------------
+Filters: "CrownLinekCount: explicit relation root for Line(4\,2\,4)"
+Randomness seeded to: 3987758809
+===============================================================================
+All tests passed (5 assertions in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"CrownLinekCount: explicit relation root for Line(4,2,4)" end time: Feb 26 17:00 GMT
+"CrownLinekCount: explicit relation root for Line(4,2,4)" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Feb 26 17:00 GMT

@@ -1,0 +1,3 @@
+rows_compared=836
+correctness_ok_rate=1.0000
+exact_ok_rows=836

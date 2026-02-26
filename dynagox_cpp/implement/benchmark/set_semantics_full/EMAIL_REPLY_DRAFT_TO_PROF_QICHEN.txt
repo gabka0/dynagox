@@ -1,0 +1,32 @@
+Subject: SNAP benchmark update (k<=6, b-a<=4) with Flink comparison
+
+Dear Prof. Qichen,
+
+Thank you for your suggestion. I completed the SNAP benchmark on wiki-Vote with:
+- k <= 6
+- b-a <= 4
+- comparison against Flink for both correctness and efficiency.
+
+I aligned the methodology to set semantics with updates (+/-), including relation-aware stream generation and delete-aware Flink processing.
+
+Results summary:
+- Total compared checkpoints: 836
+- DynaGox vs Oracle: 836/836 exact matches
+- DynaGox vs Flink: 836/836 exact matches
+
+So after alignment, correctness is fully consistent across all tested (k,a,b,phase_idx).
+
+On efficiency, DynaGox is much faster in this setup. The current rough aggregate numbers show large speedups over the Flink baseline. One caveat is that my current Flink runner computes all checkpoints in one batch SQL job and then distributes elapsed time across checkpoints, so I consider the correctness result final but timing still provisional. I will refine Flink timing to checkpoint-level measurement for stricter fairness.
+
+I prepared a short report with artifacts and plots:
+`dynagox_cpp/implement/benchmark/set_semantics_full/REPORT_FOR_PROF_QICHEN.md`
+
+Next, I can proceed with delta enumeration benchmarking:
+1) implement delta output mode in DynaGox for Line(k,a,b),
+2) add a matching Flink changelog baseline,
+3) compare full enumeration vs delta enumeration.
+
+If this direction matches your expectation, I will start from step (1) and send you the first delta-enumeration results.
+
+Best regards,
+Kassym

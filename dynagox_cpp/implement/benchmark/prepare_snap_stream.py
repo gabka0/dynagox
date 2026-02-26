@@ -32,6 +32,11 @@ def main():
     p.add_argument("--update-count", type=int, default=100000)
     p.add_argument("--milestone-every", type=int, default=10000)
     p.add_argument("--initial-ratio", type=float, default=0.5)
+    p.add_argument(
+        "--mode",
+        choices=["full_updates", "insertion_only_set"],
+        default="full_updates",
+    )
     p.add_argument("--out-crown", required=True)
     p.add_argument("--out-flink", required=True)
     args = p.parse_args()
@@ -47,20 +52,22 @@ def main():
     if initial_count < 1:
         initial_count = min(len(edges), 1)
 
+    # Track active relation tuples as (rid, src, dst) to preserve
+    # relation-specific set semantics under updates.
     active = set()
     active_list = []
 
-    def add_active(e):
-        if e not in active:
-            active.add(e)
-            active_list.append(e)
+    def add_active(t):
+        if t not in active:
+            active.add(t)
+            active_list.append(t)
 
-    def remove_active(e):
-        if e in active:
-            active.remove(e)
+    def remove_active(t):
+        if t in active:
+            active.remove(t)
             # keep O(n) simple here; benchmark generation is offline
             try:
-                active_list.remove(e)
+                active_list.remove(t)
             except ValueError:
                 pass
 
@@ -74,45 +81,46 @@ def main():
             fc.write(f"+|{rid}|{u}|{v}\n")
             rows_flink.append((seq, "+", rid, u, v, 0))
             seq += 1
-            add_active((u, v))
+            add_active((rid, u, v))
         fc.write("*\n")
         rows_flink.append((seq, "M", 0, 0, 0, 1))
         seq += 1
 
         ops_in_window = 0
         for _ in range(args.update_count):
-            do_insert = rng.random() < 0.5
+            rid = rng.randint(1, args.k)
+            do_insert = args.mode == "insertion_only_set" or (rng.random() < 0.5)
             if not active_list:
                 do_insert = True
-            elif len(active_list) == len(edges):
+            elif len(active_list) == len(edges) * args.k:
                 do_insert = False
 
-            rid = rng.randint(1, args.k)
             if do_insert:
-                chosen = None
+                chosen_edge = None
                 for _ in range(8):
                     cand = edges[rng.randrange(len(edges))]
-                    if cand not in active:
-                        chosen = cand
+                    if (rid, cand[0], cand[1]) not in active:
+                        chosen_edge = cand
                         break
-                if chosen is None:
+                if chosen_edge is None:
                     for cand in edges:
-                        if cand not in active:
-                            chosen = cand
+                        if (rid, cand[0], cand[1]) not in active:
+                            chosen_edge = cand
                             break
-                if chosen is None:
+                if chosen_edge is None:
                     continue
-                u, v = chosen
+                u, v = chosen_edge
                 fc.write(f"+|{rid}|{u}|{v}\n")
                 rows_flink.append((seq, "+", rid, u, v, 0))
                 seq += 1
-                add_active(chosen)
+                add_active((rid, u, v))
             else:
                 idx = rng.randrange(len(active_list))
                 chosen = active_list[idx]
-                u, v = chosen
-                fc.write(f"-|{rid}|{u}|{v}\n")
-                rows_flink.append((seq, "-", rid, u, v, 0))
+                rr, u, v = chosen
+                fc.write(f"-|{rr}|{u}|{v}\n")
+                # Delete exactly the active relation tuple.
+                rows_flink.append((seq, "-", rr, u, v, 0))
                 seq += 1
                 remove_active(chosen)
 

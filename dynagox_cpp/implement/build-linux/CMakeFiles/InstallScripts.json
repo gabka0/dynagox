@@ -1,0 +1,15 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/kassym/dynagox/dynagox_cpp/implement/build-linux/cmake_install.cmake",
+		"/home/kassym/dynagox/dynagox_cpp/implement/build-linux/_deps/fmt-build/cmake_install.cmake",
+		"/home/kassym/dynagox/dynagox_cpp/implement/build-linux/convert/cmake_install.cmake",
+		"/home/kassym/dynagox/dynagox_cpp/implement/build-linux/experiments/cmake_install.cmake",
+		"/home/kassym/dynagox/dynagox_cpp/implement/build-linux/multi_hash_map/cmake_install.cmake",
+		"/home/kassym/dynagox/dynagox_cpp/implement/build-linux/tests/cmake_install.cmake",
+		"/home/kassym/dynagox/dynagox_cpp/implement/build-linux/_deps/catch2-build/cmake_install.cmake",
+		"/home/kassym/dynagox/dynagox_cpp/implement/build-linux/_deps/catch2-build/src/cmake_install.cmake",
+		"/home/kassym/dynagox/dynagox_cpp/implement/build-linux/utils/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -72,3 +72,9 @@ target_link_libraries(crown_exec crown_lib)
 
 add_executable(bench_linek_count src/crown/bench_linek_count.cpp)
 target_link_libraries(bench_linek_count crown_lib)
+
+add_executable(bench_linek_count_stream src/crown/bench_linek_count_stream.cpp)
+target_link_libraries(bench_linek_count_stream crown_lib)
+
+add_executable(dump_linek_checkpoint src/crown/dump_linek_checkpoint.cpp)
+target_link_libraries(dump_linek_checkpoint crown_lib)

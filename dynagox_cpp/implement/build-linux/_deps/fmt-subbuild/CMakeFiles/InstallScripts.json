@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/kassym/dynagox/dynagox_cpp/implement/build-linux/_deps/fmt-subbuild/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
