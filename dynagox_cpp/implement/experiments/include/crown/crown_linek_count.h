@@ -12,6 +12,7 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <cstdint>
 
 class CrownLinekCount : public CrownBase {
 private:
@@ -33,6 +34,9 @@ private:
   RootKind root_kind;
   bool boolean_query;
   OutputMode mode;
+  bool benchmark_hash_only;
+  uint64_t benchmark_last_hash;
+  uint64_t benchmark_last_rows;
 
   std::vector<std::unique_ptr<RelMap>> r;
   std::vector<std::unique_ptr<RelMap>> vs;
@@ -72,15 +76,27 @@ private:
                                 std::unordered_map<std::string, long long> &out,
                                 long long delta);
   inline void print_aggregated();
+  inline void update_benchmark_hash();
 
 public:
   explicit CrownLinekCount(std::ostream &output, bool print_result, int k,
                            int a, int b, bool raw_mode,
                            const std::string &root_kind = "auto",
-                           int root_pos = 0);
+                           int root_pos = 0,
+                           bool benchmark_hash_only = false);
 
   void process(const std::string &line) override;
   void milestone() override;
+  inline uint64_t get_last_benchmark_hash() const;
+  inline uint64_t get_last_benchmark_rows() const;
 };
+
+inline uint64_t CrownLinekCount::get_last_benchmark_hash() const {
+  return benchmark_last_hash;
+}
+
+inline uint64_t CrownLinekCount::get_last_benchmark_rows() const {
+  return benchmark_last_rows;
+}
 
 #endif

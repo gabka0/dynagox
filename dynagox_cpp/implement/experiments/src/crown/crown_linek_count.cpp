@@ -7,11 +7,13 @@
 CrownLinekCount::CrownLinekCount(std::ostream &output, bool print_result, int k,
                                  int a, int b, bool raw_mode,
                                  const std::string &root_kind_param,
-                                 int root_pos)
+                                 int root_pos, bool benchmark_hash_only)
     : CrownBase(output, print_result), k(k), a(a), b(b),
       root(1), root_variable(0), root_kind(RootKind::Relation),
       boolean_query(a > b),
-      mode(raw_mode ? OutputMode::Raw : OutputMode::Count) {
+      mode(raw_mode ? OutputMode::Raw : OutputMode::Count),
+      benchmark_hash_only(benchmark_hash_only), benchmark_last_hash(0),
+      benchmark_last_rows(0) {
   if (k < 1) {
     fmt::println("Invalid k '{}'. k must be >= 1.", k);
     exit(1);
@@ -180,13 +182,20 @@ void CrownLinekCount::process(const std::string &line) {
 }
 
 void CrownLinekCount::milestone() {
-  if (print_result) {
-    if (mode == OutputMode::Count) {
-      if (boolean_query) {
+  bool should_materialize = print_result || benchmark_hash_only;
+  if (mode == OutputMode::Count) {
+    if (boolean_query) {
+      if (print_result) {
         fmt::println(output, "{}", exists_join() ? 1 : 0);
-        return;
       }
+      if (benchmark_hash_only) {
+        benchmark_last_rows = 1;
+        benchmark_last_hash = exists_join() ? 1 : 0;
+      }
+      return;
+    }
 
+    if (should_materialize) {
       out_counts.clear();
       std::unordered_map<unsigned long, long long> left_weights;
       std::unordered_map<unsigned long, long long> right_weights;
@@ -361,13 +370,18 @@ void CrownLinekCount::milestone() {
         }
       }
 
-      print_aggregated();
-      return;
+      if (print_result) {
+        print_aggregated();
+      }
+      if (benchmark_hash_only) {
+        update_benchmark_hash();
+      }
     }
+    return;
+  }
 
-    if (mode == OutputMode::Raw) {
-      full_enum();
-    }
+  if (mode == OutputMode::Raw && print_result) {
+    full_enum();
   }
 }
 
@@ -696,4 +710,23 @@ void CrownLinekCount::print_aggregated() {
   for (const auto &entry : out_counts) {
     fmt::println(output, "{}|{}", entry.first, entry.second);
   }
+}
+
+void CrownLinekCount::update_benchmark_hash() {
+  uint64_t h = 1469598103934665603ULL;
+  benchmark_last_rows = static_cast<uint64_t>(out_counts.size());
+  std::vector<std::pair<std::string, long long>> items(out_counts.begin(),
+                                                        out_counts.end());
+  std::sort(items.begin(), items.end(),
+            [](const auto &lhs, const auto &rhs) { return lhs.first < rhs.first; });
+  for (const auto &entry : items) {
+    for (unsigned char c : entry.first) {
+      h ^= static_cast<uint64_t>(c);
+      h *= 1099511628211ULL;
+    }
+    uint64_t v = static_cast<uint64_t>(entry.second);
+    h ^= v;
+    h *= 1099511628211ULL;
+  }
+  benchmark_last_hash = h;
 }
