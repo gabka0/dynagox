@@ -1,0 +1,45 @@
+Subject: Update: strict Flink timing pass (SNAP wiki-Vote, k<=6, b-a<=4)
+
+Dear Prof. Qichen,
+
+I completed a strict timing update for the SNAP wiki-Vote benchmark and aligned it with set-semantics updates (+/-).
+
+What I changed:
+- Implemented strict per-checkpoint Flink timing (one Flink job per checkpoint).
+- Added explicit job-completion waiting via Flink REST before collecting sink output.
+- Kept the same benchmark schema and correctness checks (hash + row count).
+
+Validation run (k=2, full checkpoint schedule):
+- initial-load average: 10,169.405 ms
+- updates average: 9,158.450 ms
+- by shape:
+  - a=1,b=1: initial 12,087.383 ms, updates 8,750.156 ms
+  - a=2,b=2: initial 10,036.794 ms, updates 9,599.398 ms
+  - a=3,b=3: initial 8,384.037 ms, updates 9,125.797 ms
+
+Reduced strict full-grid run (k=2..6, b-a<=4) for faster full-coverage check:
+- I used 2 checkpoints per (k,a,b): initial-load + updates (instead of 11 checkpoints).
+- total aligned rows compared: 152
+- exact matches (DynaGox vs Flink): 152/152
+- correctness rate: 1.0000
+
+Timing summary from this strict reduced full-grid run:
+- DynaGox avg time_ms:
+  - initial-load: 0.340 ms
+  - updates: 0.452 ms
+- Flink avg time_ms:
+  - initial-load: 9,043.856 ms
+  - updates: 9,025.293 ms
+- relative speedup (throughput ratio, DynaGox/Flink):
+  - min: 13,048.3x
+  - median: 22,085.2x
+  - max: 34,283.4x
+
+Important note:
+- This reduced full-grid run is strict per checkpoint but uses fewer checkpoints per query shape to reduce wall-clock runtime.
+- The complete strict grid (all checkpoints) is still possible; I can run it fully if you want publication-grade per-checkpoint timing curves for every (k,a,b).
+
+If this looks good, I can next run the complete strict grid and then proceed to delta-enumeration benchmarking.
+
+Best regards,
+Kassym

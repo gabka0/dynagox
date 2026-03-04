@@ -1,0 +1,3 @@
+system,dataset,k,a,b,phase,phase_idx,ops,time_ms,throughput,hash,rows
+flink,/home/kassym/Downloads/wiki-Vote.txt,2,1,1,initial_load,0,10,72424.747,0.138,1469598103934665603,0
+flink,/home/kassym/Downloads/wiki-Vote.txt,2,1,1,updates,1,10,71458.317,0.140,1469598103934665603,0

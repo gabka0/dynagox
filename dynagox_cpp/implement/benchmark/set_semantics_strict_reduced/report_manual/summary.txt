@@ -1,0 +1,12 @@
+rows_compared=152
+exact_ok_rows=152
+correctness_ok_rate=1.0000
+speedup_min=13048.299
+speedup_median=22085.176
+speedup_max=34283.401
+initial_load_speedup_median=27630.079
+updates_speedup_median=19978.729
+dynagox_initial_load_avg_ms=0.340
+dynagox_updates_avg_ms=0.452
+flink_initial_load_avg_ms=9043.856
+flink_updates_avg_ms=9025.293

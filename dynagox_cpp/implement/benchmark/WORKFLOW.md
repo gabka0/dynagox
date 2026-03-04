@@ -32,10 +32,21 @@ python dynagox_cpp/implement/benchmark/prepare_snap_stream.py `
 
 4. Run Flink baseline
 ---------------------
-1. Use `benchmark/flink/linek_count_template.sql`.
-2. Run matching `(k,a,b)` queries in Flink on `stream.flink.csv`.
-3. Export Flink results to CSV with columns:
-   - `system,dataset,k,a,b,phase,phase_idx,ops,time_ms,throughput,hash,rows`
+Use the runner script to export Flink CSV in the same schema:
+
+```powershell
+python dynagox_cpp/implement/benchmark/run_flink_linek_set_updates.py `
+  --flink-sql-client C:\path\to\flink\bin\sql-client.sh `
+  --stream-csv dynagox_cpp/implement/benchmark/stream.flink.csv `
+  --dataset-label path\to\snap.txt `
+  --k-min 2 --k-max 6 --max-span 4 `
+  --timing-mode strict_per_phase `
+  --out-csv dynagox_cpp/implement/benchmark/flink_results.csv
+```
+
+Timing modes:
+- `strict_per_phase`: one Flink run per checkpoint (recommended for fair timing).
+- `split_total`: one Flink run per `(k,a,b)`, total time split across checkpoints (fast but approximate).
 
 5. Compare and plot
 -------------------

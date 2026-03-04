@@ -74,7 +74,9 @@ Throughput speedup (`dynagox/flink`) on update checkpoints:
 Current Flink script computes all checkpoints for one `(k,a,b)` in one batch SQL job, then splits total elapsed time evenly across checkpoints.  
 So correctness is fully valid, but per-checkpoint latency/throughput for Flink is an approximation.
 
-For publication-grade timing fairness, next revision should measure each checkpoint with direct incremental timing (or run per-window jobs and include startup policy explicitly).
+For publication-grade timing fairness, use strict checkpoint timing via:
+`run_flink_linek_set_updates.py --timing-mode strict_per_phase`
+(one Flink SQL run per checkpoint).
 
 ## 8) Conclusion
 

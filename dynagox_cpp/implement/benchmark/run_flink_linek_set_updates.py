@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 import argparse
 import csv
+import json
+import re
 import shutil
 import subprocess
 import tempfile
 import time
+import urllib.error
+import urllib.request
 from pathlib import Path
+
+ANSI_RE = re.compile(r"\x1B\[[0-9;]*[A-Za-z]")
 
 
 def parse_args() -> argparse.Namespace:
@@ -21,6 +27,17 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--out-csv", required=True)
     p.add_argument("--system", default="flink")
     p.add_argument("--work-dir", default="/tmp")
+    p.add_argument("--flink-rest-url", default="http://localhost:8081")
+    p.add_argument("--job-timeout-sec", type=int, default=1800)
+    p.add_argument(
+        "--timing-mode",
+        choices=["split_total", "strict_per_phase"],
+        default="split_total",
+        help=(
+            "split_total: one Flink run per (k,a,b), elapsed time split across checkpoints; "
+            "strict_per_phase: one Flink run per checkpoint, time measured directly."
+        ),
+    )
     return p.parse_args()
 
 
@@ -61,7 +78,7 @@ def var_expr(k: int, idx: int) -> str:
     return f"r{idx}.src"
 
 
-def build_sql(stream_csv: Path, sink_dir: Path, k: int, a: int, b: int) -> str:
+def build_sql_all_phases(stream_csv: Path, sink_dir: Path, k: int, a: int, b: int) -> str:
     sink_cols = [f"x{i} BIGINT" for i in range(a, b + 1)]
     select_cols = [f"{var_expr(k, i)} AS x{i}" for i in range(a, b + 1)]
     group_cols = [var_expr(k, i) for i in range(a, b + 1)]
@@ -141,6 +158,74 @@ GROUP BY {group_by};
     return sql
 
 
+def build_sql_single_phase(
+    stream_csv: Path, sink_dir: Path, k: int, a: int, b: int, mseq: int
+) -> str:
+    sink_cols = [f"x{i} BIGINT" for i in range(a, b + 1)]
+    select_cols = [f"{var_expr(k, i)} AS x{i}" for i in range(a, b + 1)]
+    group_cols = [var_expr(k, i) for i in range(a, b + 1)]
+
+    sql = f"""SET 'execution.runtime-mode' = 'batch';
+SET 'sql-client.execution.result-mode' = 'TABLEAU';
+CREATE TEMPORARY TABLE updates (
+  seq BIGINT,
+  op STRING,
+  rid INT,
+  src BIGINT,
+  dst BIGINT,
+  is_milestone INT
+) WITH (
+  'connector' = 'filesystem',
+  'path' = '{stream_csv.as_posix()}',
+  'format' = 'csv',
+  'csv.ignore-parse-errors' = 'true'
+);
+
+CREATE TEMPORARY VIEW states AS
+SELECT
+  u.rid AS rid,
+  u.src AS src,
+  u.dst AS dst
+FROM updates u
+WHERE u.seq < {mseq}
+  AND u.op IN ('+','-')
+GROUP BY u.rid, u.src, u.dst
+HAVING SUM(CASE WHEN u.op = '+' THEN 1 ELSE -1 END) > 0;
+"""
+
+    for rid in range(1, k + 1):
+        sql += f"CREATE TEMPORARY VIEW r{rid} AS SELECT src, dst FROM states WHERE rid = {rid};\n"
+
+    sink_schema = ",\n  ".join(sink_cols + ["cnt BIGINT"])
+    sql += f"""
+CREATE TEMPORARY TABLE sink (
+  {sink_schema}
+) WITH (
+  'connector' = 'filesystem',
+  'path' = '{sink_dir.as_posix()}',
+  'format' = 'csv'
+);
+"""
+
+    join_clauses = []
+    for rid in range(2, k + 1):
+        join_clauses.append(f"JOIN r{rid} ON r{rid-1}.dst = r{rid}.src")
+
+    select_prefix = ",\n  ".join(select_cols + ["COUNT(*) AS cnt"])
+    group_by = ", ".join(group_cols)
+    joins = "\n".join(join_clauses)
+
+    sql += f"""
+INSERT INTO sink
+SELECT
+  {select_prefix}
+FROM r1
+{joins}
+GROUP BY {group_by};
+"""
+    return sql
+
+
 def collect_sink_by_phase(sink_dir: Path, key_cols: int) -> dict[int, list[tuple[str, int]]]:
     by_phase: dict[int, dict[str, int]] = {}
     for p in sorted(sink_dir.rglob("*")):
@@ -167,6 +252,130 @@ def collect_sink_by_phase(sink_dir: Path, key_cols: int) -> dict[int, list[tuple
         items.sort(key=lambda x: x[0])
         out[phase_idx] = items
     return out
+
+
+def collect_sink_items(sink_dir: Path, key_cols: int) -> list[tuple[str, int]]:
+    mp: dict[str, int] = {}
+    for p in sorted(sink_dir.rglob("*")):
+        if not p.is_file():
+            continue
+        name = p.name
+        if name.startswith(".") or name.endswith(".crc"):
+            continue
+        with p.open("r", encoding="utf-8", newline="") as f:
+            r = csv.reader(f)
+            for row in r:
+                if len(row) != key_cols + 1:
+                    continue
+                key = "|".join(row[:key_cols])
+                cnt = int(row[key_cols])
+                mp[key] = mp.get(key, 0) + cnt
+
+    items = list(mp.items())
+    items.sort(key=lambda x: x[0])
+    return items
+
+
+def extract_job_id(stdout: str) -> str | None:
+    text = ANSI_RE.sub("", stdout)
+    m = re.search(r"Job ID:\s*([A-Za-z0-9-]+)", text)
+    if not m:
+        return None
+    return m.group(1)
+
+
+def fetch_jobs_overview(rest_url: str) -> list[dict]:
+    url = f"{rest_url.rstrip('/')}/jobs/overview"
+    with urllib.request.urlopen(url, timeout=5) as resp:
+        payload = json.loads(resp.read().decode("utf-8"))
+    jobs = payload.get("jobs", [])
+    if isinstance(jobs, list):
+        return jobs
+    return []
+
+
+def find_new_job_id(rest_url: str, known_ids: set[str], timeout_sec: int) -> str | None:
+    deadline = time.time() + timeout_sec
+    newest_jid = None
+    newest_start = -1
+    while time.time() < deadline:
+        try:
+            jobs = fetch_jobs_overview(rest_url)
+        except Exception:
+            time.sleep(0.5)
+            continue
+
+        for job in jobs:
+            jid = str(job.get("jid", ""))
+            if not jid or jid in known_ids:
+                continue
+            start_time = int(job.get("start-time", -1))
+            if start_time > newest_start:
+                newest_start = start_time
+                newest_jid = jid
+
+        if newest_jid:
+            return newest_jid
+        time.sleep(0.5)
+
+    return None
+
+
+def wait_for_job_completion(rest_url: str, job_id: str, timeout_sec: int) -> None:
+    deadline = time.time() + timeout_sec
+    url = f"{rest_url.rstrip('/')}/jobs/{job_id}"
+    last_state = None
+    while time.time() < deadline:
+        try:
+            with urllib.request.urlopen(url, timeout=5) as resp:
+                payload = json.loads(resp.read().decode("utf-8"))
+                state = payload.get("state")
+        except urllib.error.URLError:
+            state = None
+
+        if state:
+            last_state = state
+            if state == "FINISHED":
+                return
+            if state in {"FAILED", "CANCELED"}:
+                raise RuntimeError(f"Flink job {job_id} ended with state {state}")
+
+        time.sleep(0.5)
+
+    raise TimeoutError(
+        f"Timed out waiting for Flink job {job_id}. Last state={last_state}"
+    )
+
+
+def run_flink_job(
+    sql_client: Path, sql_path: Path, rest_url: str, timeout_sec: int
+) -> float:
+    known_ids: set[str] = set()
+    try:
+        known_ids = {str(j.get("jid", "")) for j in fetch_jobs_overview(rest_url)}
+    except Exception:
+        known_ids = set()
+
+    t0 = time.perf_counter()
+    proc = subprocess.run(
+        [sql_client.as_posix(), "-f", sql_path.as_posix()],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True,
+        check=False,
+    )
+    elapsed_ms = (time.perf_counter() - t0) * 1000.0
+    if proc.returncode != 0:
+        raise RuntimeError(
+            f"Flink failed for SQL {sql_path}.\nSTDOUT:\n{proc.stdout}\nSTDERR:\n{proc.stderr}"
+        )
+
+    job_id = extract_job_id(proc.stdout + "\n" + proc.stderr)
+    if not job_id:
+        job_id = find_new_job_id(rest_url, known_ids, timeout_sec=min(60, timeout_sec))
+    if job_id:
+        wait_for_job_completion(rest_url, job_id, timeout_sec)
+    return elapsed_ms
 
 
 def fnv_hash(items: list[tuple[str, int]]) -> int:
@@ -217,35 +426,72 @@ def main() -> None:
 
         total = len(all_combos)
         for i, (k, a, b) in enumerate(all_combos, start=1):
-            print(f"[{i}/{total}] Running k={k} a={a} b={b}", flush=True)
-            job_dir = Path(
-                tempfile.mkdtemp(prefix=f"flink_set_k{k}_a{a}_b{b}_", dir=work_dir.as_posix())
-            )
-            sink_dir = job_dir / "sink"
-            sql_path = job_dir / "job.sql"
-            sql_path.write_text(build_sql(stream_csv, sink_dir, k, a, b), encoding="utf-8")
+            if args.timing_mode == "split_total":
+                print(f"[{i}/{total}] Running k={k} a={a} b={b} mode=split_total", flush=True)
+                job_dir = Path(
+                    tempfile.mkdtemp(prefix=f"flink_set_k{k}_a{a}_b{b}_", dir=work_dir.as_posix())
+                )
+                sink_dir = job_dir / "sink"
+                sql_path = job_dir / "job.sql"
+                sql_path.write_text(build_sql_all_phases(stream_csv, sink_dir, k, a, b), encoding="utf-8")
 
-            t0 = time.perf_counter()
-            proc = subprocess.run(
-                [sql_client.as_posix(), "-f", sql_path.as_posix()],
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.PIPE,
-                text=True,
-                check=False,
-            )
-            elapsed_ms = (time.perf_counter() - t0) * 1000.0
-            if proc.returncode != 0:
-                raise RuntimeError(f"Flink failed for (k={k},a={a},b={b}).\n{proc.stderr}")
+                elapsed_ms = run_flink_job(
+                    sql_client, sql_path, args.flink_rest_url, args.job_timeout_sec
+                )
+                by_phase = collect_sink_by_phase(sink_dir, key_cols=(b - a + 1))
+                split_ms = elapsed_ms / max(len(windows), 1)
+                for m_idx, (_, ops) in enumerate(windows):
+                    phase = "initial_load" if m_idx == 0 else "updates"
+                    phase_idx = 0 if m_idx == 0 else m_idx
+                    items = by_phase.get(phase_idx, [])
+                    rows = len(items)
+                    sig = fnv_hash(items)
+                    throughput = (ops * 1000.0 / split_ms) if split_ms > 0 else 0.0
+                    w.writerow(
+                        [
+                            args.system,
+                            args.dataset_label,
+                            k,
+                            a,
+                            b,
+                            phase,
+                            phase_idx,
+                            ops,
+                            f"{split_ms:.3f}",
+                            f"{throughput:.3f}",
+                            sig,
+                            rows,
+                        ]
+                    )
+                f.flush()
+                shutil.rmtree(job_dir, ignore_errors=True)
+                print(f"[{i}/{total}] Done k={k} a={a} b={b}", flush=True)
+                continue
 
-            by_phase = collect_sink_by_phase(sink_dir, key_cols=(b - a + 1))
-            split_ms = elapsed_ms / max(len(windows), 1)
-            for m_idx, (_, ops) in enumerate(windows):
+            print(f"[{i}/{total}] Running k={k} a={a} b={b} mode=strict_per_phase", flush=True)
+            for m_idx, (mseq, ops) in enumerate(windows):
                 phase = "initial_load" if m_idx == 0 else "updates"
                 phase_idx = 0 if m_idx == 0 else m_idx
-                items = by_phase.get(phase_idx, [])
+                job_dir = Path(
+                    tempfile.mkdtemp(
+                        prefix=f"flink_set_k{k}_a{a}_b{b}_p{phase_idx}_",
+                        dir=work_dir.as_posix(),
+                    )
+                )
+                sink_dir = job_dir / "sink"
+                sql_path = job_dir / "job.sql"
+                sql_path.write_text(
+                    build_sql_single_phase(stream_csv, sink_dir, k, a, b, mseq),
+                    encoding="utf-8",
+                )
+
+                elapsed_ms = run_flink_job(
+                    sql_client, sql_path, args.flink_rest_url, args.job_timeout_sec
+                )
+                items = collect_sink_items(sink_dir, key_cols=(b - a + 1))
                 rows = len(items)
                 sig = fnv_hash(items)
-                throughput = (ops * 1000.0 / split_ms) if split_ms > 0 else 0.0
+                throughput = (ops * 1000.0 / elapsed_ms) if elapsed_ms > 0 else 0.0
                 w.writerow(
                     [
                         args.system,
@@ -256,14 +502,14 @@ def main() -> None:
                         phase,
                         phase_idx,
                         ops,
-                        f"{split_ms:.3f}",
+                        f"{elapsed_ms:.3f}",
                         f"{throughput:.3f}",
                         sig,
                         rows,
                     ]
                 )
-            f.flush()
-            shutil.rmtree(job_dir, ignore_errors=True)
+                f.flush()
+                shutil.rmtree(job_dir, ignore_errors=True)
             print(f"[{i}/{total}] Done k={k} a={a} b={b}", flush=True)
 
     print(f"Wrote {out_csv}")
