@@ -282,10 +282,14 @@ void run() {
       fmt::println("linek_count requires --k, --a, and --b.");
       exit(1);
     }
+    if (linek_mode != "raw" && linek_mode != "count") {
+      fmt::println("Invalid --linek-mode '{}'. Expected raw|count.", linek_mode);
+      exit(1);
+    }
     bool raw_mode = (linek_mode == "raw");
     auto linek = CrownLinekCount(std::cout, print_result, linek_k, linek_a,
                                  linek_b, raw_mode, linek_root_kind,
-                                 linek_root_pos);
+                                 linek_root_pos, false, delta_mode);
     execute(linek);
   } else if (query == "job8s") {
     auto job8s = CrownJOB8s(std::cout, print_result);

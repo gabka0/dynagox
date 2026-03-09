@@ -9,6 +9,8 @@ struct Config {
   std::string stream;
   std::string dataset_label;
   std::string system = "dynagox";
+  std::string mode = "full";
+  std::string linek_mode = "count";
   int k = 3;
   int a = 2;
   int b = 3;
@@ -36,6 +38,10 @@ static Config parse_args(int argc, char **argv) {
       cfg.dataset_label = next(arg);
     } else if (arg == "--system") {
       cfg.system = next(arg);
+    } else if (arg == "--mode") {
+      cfg.mode = next(arg);
+    } else if (arg == "--linek-mode") {
+      cfg.linek_mode = next(arg);
     } else if (arg == "--k") {
       cfg.k = std::stoi(next(arg));
     } else if (arg == "--a") {
@@ -70,6 +76,15 @@ static Config parse_args(int argc, char **argv) {
     fmt::println("Invalid k/a/b");
     std::exit(1);
   }
+  if (cfg.mode != "full" && cfg.mode != "delta") {
+    fmt::println("Invalid --mode '{}'. Expected full|delta.", cfg.mode);
+    std::exit(1);
+  }
+  if (cfg.linek_mode != "raw" && cfg.linek_mode != "count") {
+    fmt::println("Invalid --linek-mode '{}'. Expected raw|count.",
+                 cfg.linek_mode);
+    std::exit(1);
+  }
   return cfg;
 }
 
@@ -96,8 +111,10 @@ int main(int argc, char **argv) {
   }
 
   std::ostringstream sink;
-  CrownLinekCount crown(sink, false, cfg.k, cfg.a, cfg.b, false, cfg.root_kind,
-                        cfg.root_pos, true);
+  bool raw_mode = (cfg.linek_mode == "raw");
+  bool delta_mode = (cfg.mode == "delta");
+  CrownLinekCount crown(sink, false, cfg.k, cfg.a, cfg.b, raw_mode,
+                        cfg.root_kind, cfg.root_pos, true, delta_mode);
 
   int phase_idx = 0;
   int window_ops = 0;
